@@ -40,11 +40,10 @@ web server: `mini_httpd` 提供访问， CGI for git: `cgit` 。不用 nginx 因
 
 过滤器相关依赖：
 
-- Markdown about 页面：`markdown-it-py`
-- 代码高亮：`highlight`
+- Markdown about 页面：python3 的`Markdown` 和 `filters/html-converters/md2html`
+- 代码高亮：`filters/syntax-highlighting.py`
 
-如果你要重新生成 about 页渲染结果、源码高亮结果，或者调试过滤器，
-这些外部工具需要在系统里可用。
+如果你要重新生成 about 页渲染结果、源码高亮结果，或者调试过滤器，这些外部工具需要在系统里可用。
 
 ## 编译
 
