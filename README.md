@@ -159,6 +159,8 @@ tar --exclude-vcs --exclude='.DS_Store' --exclude='*/.DS_Store'  --exclude='.git
 
 ## Build cgit & mini_httpd
 
+bin/ 目录下是 macos 26.5.1 的两个可执行文件。 如果是 ubuntu 24，可参考以下的步骤，用生成的可执行文件来替换。
+
 - cgit 官网：https://git.zx2c4.com/cgit/
 - cgit github：https://github.com/zx2c4/cgit
 - cgit 源码下载：https://github.com/zx2c4/cgit/archive/refs/tags/v1.3.1.tar.gz
