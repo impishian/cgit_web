@@ -2,11 +2,9 @@
 
 本地 git repos 浏览，页面风格类似 github。
 
-局域网内自用，谨慎钫公网部署。
+局域网内自用，谨慎放在公网部署。
 
-web server: `mini_httpd` 提供访问，
-
-CGI for git: `cgit` 
+web server: `mini_httpd` 提供访问， CGI for git: `cgit` 
 
 入口: `http://localhost:18080/cgit.cgi/`
 
