@@ -157,14 +157,14 @@ tar --exclude-vcs --exclude='.DS_Store' --exclude='*/.DS_Store'  --exclude='.git
 
 这个项目定位是本机自用和局域网浏览，不追求公网部署、安全加固或多用户权限体系。
 
-cgit 官网：https://git.zx2c4.com/cgit/
-cgit github：https://github.com/zx2c4/cgit
-cgit 源码下载：https://github.com/zx2c4/cgit/archive/refs/tags/v1.3.1.tar.gz
-
-mini_httpd 官网：https://acme.com/software/mini_httpd/
-mini_httpd 源码下载：http://www.acme.com/software/mini_httpd/mini_httpd-1.30.tar.gz
-
 ## Build cgit & mini_httpd
+
+- cgit 官网：https://git.zx2c4.com/cgit/
+- cgit github：https://github.com/zx2c4/cgit
+- cgit 源码下载：https://github.com/zx2c4/cgit/archive/refs/tags/v1.3.1.tar.gz
+
+- mini_httpd 官网：https://acme.com/software/mini_httpd/
+- mini_httpd 源码下载：http://www.acme.com/software/mini_httpd/mini_httpd-1.30.tar.gz
 
 ### 1. ubuntu 24.04.4, build cgit
 
