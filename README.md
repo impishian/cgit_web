@@ -135,10 +135,21 @@ scripts/stop.sh
 `filters/about-formatting.sh`。这个脚本会把 `.md`、`.markdown`、
 `.mkd` 等文件交给 Markdown 转换器处理。
 
+如果渲染不成功，需执行
+```
+python3 -m pip install Markdown
+```
+
+并修改 filters/html-converters/md2html 首行，使它使用 `which python3` 的路径，别忘了 #! 在前。比如：
+```
+#!/Library/Frameworks/Python.framework/Versions/3.13/bin/python3
+```
 ### 为什么源码页有语法高亮
 
 因为 `config/cgitrc` 里启用了 `source-filter`，并指向
 `filters/syntax-highlighting.py`。
+
+如果渲染不成功，也需修改 filters/syntax-highlighting.py 首行的 python3 路径。
 
 ### 为什么这里是 `/cgit.cgi/`
 
