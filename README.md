@@ -4,7 +4,7 @@
 
 局域网内自用，谨慎放在公网部署。
 
-web server: `mini_httpd` 提供访问， CGI for git: `cgit` 
+web server: `mini_httpd` 提供访问， CGI for git: `cgit` 。不用 nginx 因为它支持 FastCGI 但不直接支持 CGI，不用 lighttpd 因为它不如 mini_httpd 轻量。
 
 入口: `http://localhost:18080/cgit.cgi/`
 
