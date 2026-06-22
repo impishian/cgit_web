@@ -146,7 +146,11 @@ python3 -m pip install Markdown
 因为 `config/cgitrc` 里启用了 `source-filter`，并指向
 `filters/syntax-highlighting.py`。
 
-如果渲染不成功，也需修改 filters/syntax-highlighting.py 首行的 python3 路径。
+如果渲染不成功，需执行
+```
+python3 -m pip install pygments
+```
+也需修改 filters/syntax-highlighting.py 首行的 python3 路径。
 
 ### 为什么这里是 `/cgit.cgi/`
 
