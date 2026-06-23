@@ -76,7 +76,7 @@ web server: `mini_httpd` 提供访问， CGI for git: `cgit` 。不用 nginx 因
 直接启动：
 
 ```bash
-scripts/start.sh
+./scripts/start.sh
 ```
 
 脚本会做这些事：
@@ -96,7 +96,7 @@ http://127.0.0.1:18080/cgit.cgi/
 ## 停止
 
 ```bash
-scripts/stop.sh
+./scripts/stop.sh
 ```
 
 脚本会优先使用 `/tmp/mini_httpd.pid` 停止服务，失败时再回退到进程名查找。
@@ -131,7 +131,7 @@ scripts/stop.sh
 `filters/about-formatting.sh`。这个脚本会把 `.md`、`.markdown`、
 `.mkd` 等文件交给 Markdown 转换器处理。
 
-如果渲染不成功，需执行
+如果渲染不成功，需安装 `Mardown` 这个包：
 ```
 python3 -m pip install Markdown
 ```
@@ -145,7 +145,7 @@ python3 -m pip install Markdown
 因为 `config/cgitrc` 里启用了 `source-filter`，并指向
 `filters/syntax-highlighting.py`。
 
-如果渲染不成功，需执行
+如果渲染不成功，需安装 `pygments` 这个语法高亮包：
 ```
 python3 -m pip install pygments
 ```
