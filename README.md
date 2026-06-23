@@ -171,7 +171,9 @@ tar --exclude-vcs --exclude='.DS_Store' --exclude='*/.DS_Store'  --exclude='.git
 
 ## Build cgit & mini_httpd
 
-`bin/cgit.real`, `bin/mini_httpd` 是 macos 26.5.1 的两个可执行文件。如何是 ubuntu24，可以用bin下相关文件来copy替换，并注意用 chmod +x 添加可执行权限。
+`bin/cgit.real`, `bin/mini_httpd` 是 macos 26.5.1 的两个可执行文件。
+
+如果是 ubuntu24，可以用 bin/ 下相关文件来copy替换，并注意用 chmod +x 添加可执行权限。
 
 Build 过程参考：
 
