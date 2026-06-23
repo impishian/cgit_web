@@ -219,21 +219,76 @@ static void *cgit_memrchr(const void *s, int c, size_t n)
 
 ### 3. ubuntu 24.04.4, build mini_httpd
 
-
 Makefile L27: CFLAGS 去掉 -ansi -pedantic
 
-mini_httpd.c:  send_via_sendfile 函数体改为空 ( vim打开再执行 :2799,2823d )，再执行
+mini_httpd.c:  send_via_sendfile 函数体改为空 ( vim打开再执行 :2799,2823d )，改为以下实现：
+
+```
+static void
+send_via_sendfile( int fd, int s, off_t size )
+{
+    char buf[32768];
+    off_t remaining = size;
+
+    while ( remaining > 0 )
+    {
+        ssize_t r;
+        ssize_t written = 0;
+        size_t want = remaining < (off_t) sizeof(buf) ?
+            (size_t) remaining : sizeof(buf);
+
+        r = read( fd, buf, want );
+        if ( r < 0 )
+        {
+            if ( errno == EINTR || errno == EAGAIN )
+            {
+                sleep( 1 );
+                continue;
+            }
+            return;
+        }
+
+        if ( r == 0 )
+            return;
+
+        while ( written < r )
+        {
+            ssize_t w = write( s, buf + written, (size_t) ( r - written ) );
+
+            if ( w < 0 )
+            {
+                if ( errno == EINTR || errno == EAGAIN )
+                {
+                    sleep( 1 );
+                    continue;
+                }
+                return;
+            }
+
+            if ( w == 0 )
+                return;
+
+            written += w;
+        }
+
+        remaining -= r;
+        (void) alarm( WRITE_TIMEOUT );
+    }
+}
+```
 
 ```
 make mini_httpd
 ```
+
+不想编译，也可以用 `apt install mini-httpd` 直接安装。（注：安装包是 mini-httpd，进程是 mini_httpd）
 
 ### 4. macos 26.5.1 build mini_httpd
 
 
 Makefile L10:  CRYPT_LIB =  
 
-mini_httpd.c:  send_via_sendfile 函数体改为空 ( vim打开再执行 :2799,2823d )，再执行
+mini_httpd.c:  同上，修改 send_via_sendfile 函数的实现，再执行：
 
 ```
 make mini_httpd
