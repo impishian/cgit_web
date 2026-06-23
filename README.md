@@ -33,7 +33,6 @@ web server: `mini_httpd` 提供访问， CGI for git: `cgit` 。不用 nginx 因
 运行时依赖：
 
 - `bash`
-- `perl`
 - `git`
 - `mini_httpd` 对应二进制 （示例中为 macos 26.5.2 的可执行文件）
 - `cgit.real` 对应二进制 （示例中为 macos 26.5.2 的可执行文件，由编译得到 cgit 复制改名为 cgit.real）
