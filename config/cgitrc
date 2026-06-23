@@ -42,6 +42,7 @@ cache-root-ttl=5
 cache-scanrc-ttl=15
 cache-static-ttl=-1
 cache-snapshot-ttl=5
+cache-about-ttl=5
 
 repo.url=cgit
 repo.path=/Users/ian/github/cgit/.git
