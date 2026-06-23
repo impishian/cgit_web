@@ -52,6 +52,8 @@ cache-root-ttl=5
 cache-scanrc-ttl=15
 cache-static-ttl=-1
 cache-snapshot-ttl=5
+cache-about-ttl=5
+
 EOF
 
 find "$ROOT" -mindepth 2 -maxdepth 3 -type d -name .git | sort | while IFS= read -r gitdir; do
