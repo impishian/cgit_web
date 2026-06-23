@@ -33,6 +33,7 @@ web server: `mini_httpd` 提供访问， CGI for git: `cgit` 。不用 nginx 因
 运行时依赖：
 
 - `bash`
+- `perl`
 - `git`
 - `mini_httpd` 对应二进制 （示例中为 macos 26.5.2 的可执行文件）
 - `cgit.real` 对应二进制 （示例中为 macos 26.5.2 的可执行文件，由编译得到 cgit 复制改名为 cgit.real）
@@ -170,7 +171,9 @@ tar --exclude-vcs --exclude='.DS_Store' --exclude='*/.DS_Store'  --exclude='.git
 
 ## Build cgit & mini_httpd
 
-bin/ 目录下是 macos 26.5.1 的两个可执行文件。 如果是 ubuntu 24，可参考以下的步骤，用生成的可执行文件来替换。
+`bin/cgit.real`, `bin/mini_httpd` 是 macos 26.5.1 的两个可执行文件。如何是 ubuntu24，可以用bin下相关文件来copy替换，并注意用 chmod +x 添加可执行权限。
+
+Build 过程参考：
 
 - cgit 官网：https://git.zx2c4.com/cgit/
 - cgit github：https://github.com/zx2c4/cgit
