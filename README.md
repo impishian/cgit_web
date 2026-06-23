@@ -59,10 +59,10 @@ web server: `mini_httpd` 提供访问， CGI for git: `cgit` 。不用 nginx 因
 `config/cgitrc` 可以由脚本自动生成，脚本会扫描指定根目录下的子仓库：
 
 ```bash
-scripts/gen_cgitrc.sh /Users/ian/github > config/cgitrc
+./scripts/gen_cgitrc.sh /Users/ian/github > ./config/cgitrc
 ```
 
-默认情况下，如果不传参数，脚本会使用 `$HOME/github` 作为仓库根目录。
+默认情况下，如果不传参数，脚本会使用 `$HOME/github` 作为仓库根目录。这个根目录下有很多子目录，每个子目录是一个 git 仓库。
 
 生成规则：
 
@@ -121,6 +121,7 @@ scripts/stop.sh
 - `start.sh` 会预创建 128 个 slot 目录
 - 超出范围的旧 slot 会在启动时清理
 
+如果页面不对，可以 stop, 删除 Cache 目录 再 start。
 
 ## 常见问题
 
